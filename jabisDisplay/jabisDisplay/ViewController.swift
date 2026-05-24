@@ -181,6 +181,9 @@ class ViewController: UIViewController {
         classIcon4.textAlignment = .center
         classIcon4.font = .systemFont(ofSize: 40)
         
+        let line = UIImageView(image: UIImage(named: "ractangle"))
+        line.contentMode = .scaleAspectFit
+        
         view.addSubview(angleIcon1)
         view.addSubview(employmentStatus)
         view.addSubview(settingIcon)
@@ -212,6 +215,7 @@ class ViewController: UIViewController {
         view.addSubview(classIcon2)
         view.addSubview(classIcon3)
         view.addSubview(classIcon4)
+        view.addSubview(line)
 
         //화면에 추가
         
@@ -246,6 +250,7 @@ class ViewController: UIViewController {
         classIcon2.translatesAutoresizingMaskIntoConstraints = false
         classIcon3.translatesAutoresizingMaskIntoConstraints = false
         classIcon4.translatesAutoresizingMaskIntoConstraints = false
+        line.translatesAutoresizingMaskIntoConstraints = false
         //자동배치 끄기
         
         NSLayoutConstraint.activate([
@@ -316,7 +321,7 @@ class ViewController: UIViewController {
             leftTopBox.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
             leftTopBox.widthAnchor.constraint(equalToConstant: 164),
             
-            rightTopBox.leadingAnchor.constraint(equalTo: leftTopBox.trailingAnchor, constant: 17),
+            rightTopBox.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
             rightTopBox.widthAnchor.constraint(equalToConstant: 164),
             rightTopBox.heightAnchor.constraint(equalToConstant: 180),
             rightTopBox.centerYAnchor.constraint(equalTo: leftTopBox.centerYAnchor),
@@ -386,6 +391,10 @@ class ViewController: UIViewController {
             classIcon4.topAnchor.constraint(equalTo: rightBottomBox.topAnchor, constant: 30),
             classIcon4.heightAnchor.constraint(equalToConstant: 80),
             classIcon4.widthAnchor.constraint(equalToConstant: 80),
+            
+            line.leadingAnchor.constraint(equalTo: graph.trailingAnchor, constant: 16),
+            line.centerYAnchor.constraint(equalTo: graph.centerYAnchor),
+            line.heightAnchor.constraint(equalToConstant: 30),
         ])
         //배치 하기
     }
