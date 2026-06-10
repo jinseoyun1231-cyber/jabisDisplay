@@ -159,28 +159,34 @@ class ViewController: UIViewController {
         
         classIcon1.text = "💻"
         classIcon1.backgroundColor = .black
-        classIcon1.clipsToBounds = true
         classIcon1.textAlignment = .center
         classIcon1.font = .systemFont(ofSize: 40)
+        classIcon1.layer.cornerRadius = 40
+        classIcon1.clipsToBounds = true
         
         classIcon2.text = "💻"
         classIcon2.backgroundColor = .black
-        classIcon2.clipsToBounds = true
         classIcon2.textAlignment = .center
         classIcon2.font = .systemFont(ofSize: 40)
+        classIcon2.layer.cornerRadius = 40
+        classIcon2.clipsToBounds = true
         
         classIcon3.text = "🔧"
         classIcon3.backgroundColor = .black
-        classIcon3.clipsToBounds = true
         classIcon3.textAlignment = .center
         classIcon3.font = .systemFont(ofSize: 40)
+        classIcon3.layer.cornerRadius = 40
+        classIcon3.clipsToBounds = true
         
         classIcon4.text = "🤖"
         classIcon4.backgroundColor = .black
-        classIcon4.clipsToBounds = true
         classIcon4.textAlignment = .center
         classIcon4.font = .systemFont(ofSize: 40)
-        
+        classIcon4.layer.cornerRadius = 40
+        classIcon4.clipsToBounds = true
+    
+        classIcon4.font = .systemFont(ofSize: 40)
+    
         line.contentMode = .scaleAspectFit
         
         addviews()
@@ -307,6 +313,7 @@ class ViewController: UIViewController {
             make.centerY.equalTo(graph.snp.centerY)
             make.height.equalTo(30)
         }
+        
         leftTopBox.snp.makeConstraints { make in
             make.top.equalTo(topBox.snp.bottom).offset(52)
             make.leading.equalToSuperview().offset(24)
@@ -331,6 +338,7 @@ class ViewController: UIViewController {
             make.centerX.equalTo(rightTopBox.snp.centerX)
             make.centerY.equalTo(leftBottomBox.snp.centerY)
         }
+        
         classBox1.snp.makeConstraints { make in
             make.width.equalTo(48)
             make.height.equalTo(34)
@@ -349,13 +357,13 @@ class ViewController: UIViewController {
             make.leading.equalTo(leftBottomBox.snp.leading).offset(16)
             make.bottom.equalTo(leftBottomBox.snp.bottom).offset(-16)
         }
-        
         classBox4.snp.makeConstraints { make in
             make.width.equalTo(48)
             make.height.equalTo(34)
             make.leading.equalTo(rightBottomBox.snp.leading).offset(16)
             make.bottom.equalTo(rightBottomBox.snp.bottom).offset(-16)
         }
+        
         class1.snp.makeConstraints { make in
             make.centerX.centerY.equalTo(classBox1)
             make.height.equalTo(18)
@@ -372,31 +380,26 @@ class ViewController: UIViewController {
             make.centerX.centerY.equalTo(classBox4)
             make.height.equalTo(18)
         }
+        
         classIcon1.snp.makeConstraints { make in
-            make.centerX.equalTo(leftTopBox.snp.centerX)
-            make.top.equalTo(leftTopBox.snp.top).offset(30)
-            make.width.height.equalTo(80)
+            make.centerX.equalTo(leftTopBox)
+            make.height.width.equalTo(80)
+            make.top.equalTo(leftTopBox).offset(30)
         }
         classIcon2.snp.makeConstraints { make in
-            make.centerX.equalTo(rightTopBox.snp.centerX)
-            make.top.equalTo(rightTopBox.snp.top).offset(30)
-            make.width.height.equalTo(80)
+            make.centerX.equalTo(rightTopBox)
+            make.height.width.equalTo(80)
+            make.top.equalTo(rightTopBox).offset(30)
         }
         classIcon3.snp.makeConstraints { make in
-            make.centerX.equalTo(leftBottomBox.snp.centerX)
-            make.top.equalTo(leftBottomBox.snp.top).offset(30)
-            make.width.height.equalTo(80)
+            make.centerX.equalTo(leftBottomBox)
+            make.height.width.equalTo(80)
+            make.top.equalTo(leftBottomBox).offset(30)
         }
-        
         classIcon4.snp.makeConstraints { make in
-            make.centerX.equalTo(rightBottomBox.snp.centerX)
-            make.top.equalTo(rightBottomBox.snp.top).offset(30)
-            make.width.height.equalTo(80)
+            make.centerX.equalTo(rightBottomBox)
+            make.height.width.equalTo(80)
+            make.top.equalTo(rightBottomBox).offset(30)
         }
-        classIcon1.layer.cornerRadius = 40
-        classIcon2.layer.cornerRadius = 40
-        classIcon3.layer.cornerRadius = 40
-        classIcon4.layer.cornerRadius = 40
-        self.view.layoutIfNeeded()
     }
 }
