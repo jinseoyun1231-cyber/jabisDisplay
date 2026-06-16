@@ -47,6 +47,16 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .black
         
+        navigationBar()
+        setUpTopBox()
+        middleLine()
+        classBoxes()
+
+
+        addviews()
+        constraints()
+    }
+    func navigationBar() {
         angleIcon1.contentMode = .scaleAspectFit
         //꺽쇠괄호 설정
         
@@ -62,7 +72,8 @@ class ViewController: UIViewController {
         employmentStatus2.textColor = UIColor(red: 0x2F/255, green: 0x53/255, blue: 0xff/255, alpha: 1)
         employmentStatus2.font = UIFont.boldSystemFont(ofSize: 16)
         //취업현황 파란색 글씨
-        
+    }
+    func setUpTopBox() {
         topBox.backgroundColor = UIColor(red: 0x19/255, green: 0x19/255, blue: 0x19/255, alpha: 1)
         topBox.layer.cornerRadius = 6
         topBox.clipsToBounds = true
@@ -102,10 +113,14 @@ class ViewController: UIViewController {
         graphText.text = "2024 취업률"
         graphText.textColor = UIColor(red: 0x7f/255, green: 0x7f/255, blue: 0x7f/255, alpha: 1)
         
+        line.contentMode = .scaleAspectFit
+    }
+    func middleLine() {
         newLine.textColor = UIColor(red: 0x8e/255, green: 0x8e/255, blue: 0x8e/255, alpha: 1)
         newLine.text = "반별 취업 현황 확인하기"
         newLine.font = .systemFont(ofSize: 22)
-        
+    }
+    func classBoxes() {
         leftTopBox.layer.cornerRadius = 6
         leftTopBox.backgroundColor = UIColor(red: 0x19/255, green: 0x19/255, blue: 0x19/255, alpha: 1)
         leftTopBox.clipsToBounds = true
@@ -186,11 +201,6 @@ class ViewController: UIViewController {
         classIcon4.clipsToBounds = true
     
         classIcon4.font = .systemFont(ofSize: 40)
-    
-        line.contentMode = .scaleAspectFit
-        
-        addviews()
-        constraints()
     }
     func addviews() {
         view.addSubview(angleIcon1)
@@ -242,164 +252,6 @@ class ViewController: UIViewController {
             make.trailing.equalToSuperview().offset(-41)
             make.width.equalTo(28)
             make.height.equalTo(settingIcon.snp.width)
-        }
-        topBox.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(24)
-            make.trailing.equalToSuperview().offset(-24)
-            make.top.equalToSuperview().offset(110)
-            make.height.equalTo(265)
-        }
-        employmentStatus2.snp.makeConstraints { make in
-            make.top.equalTo(angleIcon1.snp.bottom).offset(32)
-            make.leading.equalTo(topBox.snp.leading).offset(16)
-        }
-        circle1.snp.makeConstraints { make in
-            make.trailing.equalTo(topBox.snp.trailing).offset(-81)
-            make.top.equalTo(topBox.snp.top).offset(23)
-            make.height.equalTo(6)
-        }
-        circle2.snp.makeConstraints { make in
-            make.trailing.equalTo(topBox.snp.trailing).offset(-81)
-            make.top.equalTo(topBox.snp.top).offset(39)
-            make.height.equalTo(6)
-        }
-        empComlate.snp.makeConstraints { make in
-            make.leading.equalTo(circle1.snp.trailing).offset(3)
-            make.centerY.equalTo(circle1.snp.centerY)
-            make.height.equalTo(12)
-        }
-        
-        empNotComlate.snp.makeConstraints { make in
-            make.leading.equalTo(circle2.snp.trailing).offset(3)
-            make.centerY.equalTo(circle2.snp.centerY)
-            make.height.equalTo(12)
-        }
-        graph.snp.makeConstraints { make in
-            make.width.height.equalTo(120)
-            make.top.equalTo(topBox.snp.top).offset(72)
-            make.leading.equalTo(topBox.snp.leading).offset(65)
-        }
-        
-        graphText1.snp.makeConstraints { make in
-            make.top.equalTo(topBox.snp.top).offset(110)
-            make.leading.equalTo(graph.snp.trailing).offset(40)
-            make.height.equalTo(17)
-        }
-        
-        graphText2.snp.makeConstraints { make in
-            make.top.equalTo(graphText1.snp.bottom).offset(3)
-            make.centerX.equalTo(graphText1.snp.centerX)
-            make.height.equalTo(19)
-        }
-        
-        graphText3.snp.makeConstraints { make in
-            make.centerX.equalTo(graph.snp.centerX)
-            make.centerY.equalTo(graph.snp.centerY)
-            make.height.equalTo(19)
-        }
-        
-        graphText.snp.makeConstraints { make in
-            make.top.equalTo(graph.snp.bottom).offset(39)
-            make.leading.equalTo(topBox.snp.leading).offset(119)
-            make.height.equalTo(17)
-        }
-        newLine.snp.makeConstraints { make in
-            make.top.equalTo(topBox.snp.bottom).offset(20)
-            make.leading.equalToSuperview().offset(23)
-            make.height.equalTo(24)
-        }
-        line.snp.makeConstraints { make in
-            make.leading.equalTo(graph.snp.trailing).offset(16)
-            make.centerY.equalTo(graph.snp.centerY)
-            make.height.equalTo(30)
-        }
-        
-        leftTopBox.snp.makeConstraints { make in
-            make.top.equalTo(topBox.snp.bottom).offset(52)
-            make.leading.equalToSuperview().offset(24)
-            make.width.equalTo(164)
-            make.height.equalTo(180)
-        }
-        rightTopBox.snp.makeConstraints { make in
-            make.trailing.equalToSuperview().offset(-24)
-            make.width.equalTo(164)
-            make.height.equalTo(180)
-            make.centerY.equalTo(leftTopBox.snp.centerY)
-        }
-        leftBottomBox.snp.makeConstraints { make in
-            make.centerX.equalTo(leftTopBox.snp.centerX)
-            make.top.equalTo(leftTopBox.snp.bottom).offset(16)
-            make.width.equalTo(164)
-            make.height.equalTo(180)
-        }
-        rightBottomBox.snp.makeConstraints { make in
-            make.width.equalTo(164)
-            make.height.equalTo(180)
-            make.centerX.equalTo(rightTopBox.snp.centerX)
-            make.centerY.equalTo(leftBottomBox.snp.centerY)
-        }
-        
-        classBox1.snp.makeConstraints { make in
-            make.width.equalTo(48)
-            make.height.equalTo(34)
-            make.leading.equalTo(leftTopBox.snp.leading).offset(16)
-            make.bottom.equalTo(leftTopBox.snp.bottom).offset(-16)
-        }
-        classBox2.snp.makeConstraints { make in
-            make.width.equalTo(48)
-            make.height.equalTo(34)
-            make.leading.equalTo(rightTopBox.snp.leading).offset(16)
-            make.bottom.equalTo(rightTopBox.snp.bottom).offset(-16)
-        }
-        classBox3.snp.makeConstraints { make in
-            make.width.equalTo(48)
-            make.height.equalTo(34)
-            make.leading.equalTo(leftBottomBox.snp.leading).offset(16)
-            make.bottom.equalTo(leftBottomBox.snp.bottom).offset(-16)
-        }
-        classBox4.snp.makeConstraints { make in
-            make.width.equalTo(48)
-            make.height.equalTo(34)
-            make.leading.equalTo(rightBottomBox.snp.leading).offset(16)
-            make.bottom.equalTo(rightBottomBox.snp.bottom).offset(-16)
-        }
-        
-        class1.snp.makeConstraints { make in
-            make.centerX.centerY.equalTo(classBox1)
-            make.height.equalTo(18)
-        }
-        class2.snp.makeConstraints { make in
-            make.centerX.centerY.equalTo(classBox2)
-            make.height.equalTo(18)
-        }
-        class3.snp.makeConstraints { make in
-            make.centerX.centerY.equalTo(classBox3)
-            make.height.equalTo(18)
-        }
-        class4.snp.makeConstraints { make in
-            make.centerX.centerY.equalTo(classBox4)
-            make.height.equalTo(18)
-        }
-        
-        classIcon1.snp.makeConstraints { make in
-            make.centerX.equalTo(leftTopBox)
-            make.height.width.equalTo(80)
-            make.top.equalTo(leftTopBox).offset(30)
-        }
-        classIcon2.snp.makeConstraints { make in
-            make.centerX.equalTo(rightTopBox)
-            make.height.width.equalTo(80)
-            make.top.equalTo(rightTopBox).offset(30)
-        }
-        classIcon3.snp.makeConstraints { make in
-            make.centerX.equalTo(leftBottomBox)
-            make.height.width.equalTo(80)
-            make.top.equalTo(leftBottomBox).offset(30)
-        }
-        classIcon4.snp.makeConstraints { make in
-            make.centerX.equalTo(rightBottomBox)
-            make.height.width.equalTo(80)
-            make.top.equalTo(rightBottomBox).offset(30)
         }
     }
 }
