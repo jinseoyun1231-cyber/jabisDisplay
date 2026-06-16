@@ -14,10 +14,6 @@ class ViewController: UIViewController {
     let settingIcon = UIImageView(image: UIImage(named: "settingIcon"))
     let employmentStatus2 = UILabel()
     let topBox = UIView()
-    let circle1 = UIImageView(image: UIImage(systemName: "circle.fill"))
-    let circle2 = UIImageView(image: UIImage(systemName: "circle.fill"))
-    let empComlate = UILabel()
-    let empNotComlate = UILabel()
     let graph = UIImageView(image: UIImage(named: "graph"))
     let graphText1 = UILabel()
     let graphText2 = UILabel()
@@ -52,10 +48,10 @@ class ViewController: UIViewController {
         middleLine()
         classBoxes()
 
-
         addviews()
         constraints()
     }
+    
     func navigationBar() {
         angleIcon1.contentMode = .scaleAspectFit
         //꺽쇠괄호 설정
@@ -67,34 +63,16 @@ class ViewController: UIViewController {
         
         settingIcon.contentMode = .scaleAspectFit
         //설정 아이콘 설정
-        
+    }
+    func setUpTopBox() {
         employmentStatus2.text = "취업현황"
         employmentStatus2.textColor = UIColor(red: 0x2F/255, green: 0x53/255, blue: 0xff/255, alpha: 1)
         employmentStatus2.font = UIFont.boldSystemFont(ofSize: 16)
         //취업현황 파란색 글씨
-    }
-    func setUpTopBox() {
+
         topBox.backgroundColor = UIColor(red: 0x19/255, green: 0x19/255, blue: 0x19/255, alpha: 1)
         topBox.layer.cornerRadius = 6
         topBox.clipsToBounds = true
-        
-        circle1.tintColor = UIColor(red: 0x2F/255, green: 0x53/255, blue: 0xff/255, alpha: 1)
-        circle1.contentMode = .scaleAspectFit
-        //파란 원
-        
-        circle2.tintColor = UIColor(red: 0x0c/255, green: 0x29/255, blue: 0x42/255, alpha: 1)
-        circle2.contentMode = .scaleAspectFit
-        //좀 회색 원
-        
-        empComlate.text = "취업완료"
-        empComlate.textColor = UIColor(red: 0x2F/255, green: 0x53/255, blue: 0xff/255, alpha: 1)
-        empComlate.font = UIFont.boldSystemFont(ofSize: 11)
-        //취업완료 글씨
-        
-        empNotComlate.text = "취업 전"
-        empNotComlate.textColor = UIColor(red: 0x8e/255, green: 0x8e/255, blue: 0x8e/255, alpha: 1)
-        empNotComlate.font = UIFont.boldSystemFont(ofSize: 11)
-        
         graph.contentMode = .scaleAspectFit
         //그래프
         
@@ -121,137 +99,286 @@ class ViewController: UIViewController {
         newLine.font = .systemFont(ofSize: 22)
     }
     func classBoxes() {
-        leftTopBox.layer.cornerRadius = 6
-        leftTopBox.backgroundColor = UIColor(red: 0x19/255, green: 0x19/255, blue: 0x19/255, alpha: 1)
-        leftTopBox.clipsToBounds = true
-        
-        rightTopBox.backgroundColor = UIColor(red: 0x19/255, green: 0x19/255, blue: 0x19/255, alpha: 1)
-        rightTopBox.layer.cornerRadius = 6
-        rightTopBox.clipsToBounds = true
-        
-        leftBottomBox.backgroundColor = UIColor(red: 0x19/255, green: 0x19/255, blue: 0x19/255, alpha: 1)
-        leftBottomBox.layer.cornerRadius = 6
-        leftBottomBox.clipsToBounds = true
-                
-        rightBottomBox.backgroundColor = UIColor(red: 0x19/255, green: 0x19/255, blue: 0x19/255, alpha: 1)
-        rightBottomBox.layer.cornerRadius = 6
-        rightBottomBox.clipsToBounds = true
-        //밑에 박스들
-        
-        classBox1.backgroundColor = UIColor(red: 0x33/255, green: 0x33/255, blue: 0x33/255, alpha: 1)
-        classBox1.layer.cornerRadius = 12
-        classBox1.clipsToBounds = true
-        
-        classBox2.backgroundColor = UIColor(red: 0x33/255, green: 0x33/255, blue: 0x33/255, alpha: 1)
-        classBox2.layer.cornerRadius = 12
-        classBox2.clipsToBounds = true
-        
-        classBox3.backgroundColor = UIColor(red: 0x33/255, green: 0x33/255, blue: 0x33/255, alpha: 1)
-        classBox3.layer.cornerRadius = 12
-        classBox3.clipsToBounds = true
-        
-        classBox4.backgroundColor = UIColor(red: 0x33/255, green: 0x33/255, blue: 0x33/255, alpha: 1)
-        classBox4.layer.cornerRadius = 12
-        classBox4.clipsToBounds = true
-        //n반 표시 박스들
-        
-        class1.text = "1반"
-        class1.textColor = .white
-        class1.font = .boldSystemFont(ofSize: 15)
-        
-        class2.text = "2반"
-        class2.textColor = .white
-        class2.font = .boldSystemFont(ofSize: 15)
-        
-        class3.text = "3반"
-        class3.textColor = .white
-        class3.font = .boldSystemFont(ofSize: 15)
-        
-        class4.text = "4반"
-        class4.textColor = .white
-        class4.font = .boldSystemFont(ofSize: 15)
-        //반 표시 텍스트들
-        
-        classIcon1.text = "💻"
-        classIcon1.backgroundColor = .black
-        classIcon1.textAlignment = .center
-        classIcon1.font = .systemFont(ofSize: 40)
-        classIcon1.layer.cornerRadius = 40
-        classIcon1.clipsToBounds = true
-        
-        classIcon2.text = "💻"
-        classIcon2.backgroundColor = .black
-        classIcon2.textAlignment = .center
-        classIcon2.font = .systemFont(ofSize: 40)
-        classIcon2.layer.cornerRadius = 40
-        classIcon2.clipsToBounds = true
-        
-        classIcon3.text = "🔧"
-        classIcon3.backgroundColor = .black
-        classIcon3.textAlignment = .center
-        classIcon3.font = .systemFont(ofSize: 40)
-        classIcon3.layer.cornerRadius = 40
-        classIcon3.clipsToBounds = true
-        
-        classIcon4.text = "🤖"
-        classIcon4.backgroundColor = .black
-        classIcon4.textAlignment = .center
-        classIcon4.font = .systemFont(ofSize: 40)
-        classIcon4.layer.cornerRadius = 40
-        classIcon4.clipsToBounds = true
-    
-        classIcon4.font = .systemFont(ofSize: 40)
+        func box1() {
+            leftTopBox.layer.cornerRadius = 6
+            leftTopBox.backgroundColor = UIColor(red: 0x19/255, green: 0x19/255, blue: 0x19/255, alpha: 1)
+            leftTopBox.clipsToBounds = true
+            
+            classBox1.backgroundColor = UIColor(red: 0x33/255, green: 0x33/255, blue: 0x33/255, alpha: 1)
+            classBox1.layer.cornerRadius = 12
+            classBox1.clipsToBounds = true
+            
+            class1.text = "1반"
+            class1.textColor = .white
+            class1.font = .boldSystemFont(ofSize: 15)
+            
+            classIcon1.text = "💻"
+            classIcon1.backgroundColor = .black
+            classIcon1.textAlignment = .center
+            classIcon1.font = .systemFont(ofSize: 40)
+            classIcon1.layer.cornerRadius = 40
+            classIcon1.clipsToBounds = true
+        }
+        func box2() {
+            rightTopBox.backgroundColor = UIColor(red: 0x19/255, green: 0x19/255, blue: 0x19/255, alpha: 1)
+            rightTopBox.layer.cornerRadius = 6
+            rightTopBox.clipsToBounds = true
+            
+            classBox2.backgroundColor = UIColor(red: 0x33/255, green: 0x33/255, blue: 0x33/255, alpha: 1)
+            classBox2.layer.cornerRadius = 12
+            classBox2.clipsToBounds = true
+            
+            class2.text = "2반"
+            class2.textColor = .white
+            class2.font = .boldSystemFont(ofSize: 15)
+            
+            classIcon2.text = "💻"
+            classIcon2.backgroundColor = .black
+            classIcon2.textAlignment = .center
+            classIcon2.font = .systemFont(ofSize: 40)
+            classIcon2.layer.cornerRadius = 40
+            classIcon2.clipsToBounds = true
+        }
+        func box3() {
+            leftBottomBox.backgroundColor = UIColor(red: 0x19/255, green: 0x19/255, blue: 0x19/255, alpha: 1)
+            leftBottomBox.layer.cornerRadius = 6
+            leftBottomBox.clipsToBounds = true
+            
+            classBox3.backgroundColor = UIColor(red: 0x33/255, green: 0x33/255, blue: 0x33/255, alpha: 1)
+            classBox3.layer.cornerRadius = 12
+            classBox3.clipsToBounds = true
+            
+            class3.text = "3반"
+            class3.textColor = .white
+            class3.font = .boldSystemFont(ofSize: 15)
+            
+            classIcon3.text = "🔧"
+            classIcon3.backgroundColor = .black
+            classIcon3.textAlignment = .center
+            classIcon3.font = .systemFont(ofSize: 40)
+            classIcon3.layer.cornerRadius = 40
+            classIcon3.clipsToBounds = true
+        }
+        func box4() {
+            rightBottomBox.backgroundColor = UIColor(red: 0x19/255, green: 0x19/255, blue: 0x19/255, alpha: 1)
+            rightBottomBox.layer.cornerRadius = 6
+            rightBottomBox.clipsToBounds = true
+            
+            classBox4.backgroundColor = UIColor(red: 0x33/255, green: 0x33/255, blue: 0x33/255, alpha: 1)
+            classBox4.layer.cornerRadius = 12
+            classBox4.clipsToBounds = true
+            
+            class4.text = "4반"
+            class4.textColor = .white
+            class4.font = .boldSystemFont(ofSize: 15)
+            
+            classIcon4.text = "🤖"
+            classIcon4.backgroundColor = .black
+            classIcon4.textAlignment = .center
+            classIcon4.font = .systemFont(ofSize: 40)
+            classIcon4.layer.cornerRadius = 40
+            classIcon4.clipsToBounds = true
+            classIcon4.font = .systemFont(ofSize: 40)        }
+        box1()
+        box2()
+        box3()
+        box4()
     }
     func addviews() {
         view.addSubview(angleIcon1)
         view.addSubview(employmentStatus)
         view.addSubview(settingIcon)
+        
         view.addSubview(topBox)
-        view.addSubview(employmentStatus2)
-        view.addSubview(circle1)
-        view.addSubview(circle2)
-        view.addSubview(empComlate)
-        view.addSubview(empNotComlate)
-        view.addSubview(graph)
-        view.addSubview(graphText1)
-        view.addSubview(graphText2)
-        view.addSubview(graphText3)
-        view.addSubview(graphText)
+        topBox.addSubview(employmentStatus2)
+        topBox.addSubview(graph)
+        topBox.addSubview(graphText1)
+        topBox.addSubview(graphText2)
+        graph.addSubview(graphText3)
+        topBox.addSubview(graphText)
+        topBox.addSubview(line)
+        
         view.addSubview(newLine)
+        
         view.addSubview(leftTopBox)
+        leftTopBox.addSubview(classBox1)
+        classBox1.addSubview(class1)
+        leftTopBox.addSubview(classIcon1)
+        
         view.addSubview(rightTopBox)
+        rightTopBox.addSubview(classBox2)
+        rightTopBox.addSubview(classIcon2)
+        classBox2.addSubview(class2)
+        
         view.addSubview(leftBottomBox)
+        leftBottomBox.addSubview(classBox3)
+        classBox3.addSubview(class3)
+        leftBottomBox.addSubview(classIcon3)
+
         view.addSubview(rightBottomBox)
-        view.addSubview(classBox1)
-        view.addSubview(classBox2)
-        view.addSubview(classBox3)
-        view.addSubview(classBox4)
-        view.addSubview(class1)
-        view.addSubview(class2)
-        view.addSubview(class3)
-        view.addSubview(class4)
-        view.addSubview(classIcon1)
-        view.addSubview(classIcon2)
-        view.addSubview(classIcon3)
-        view.addSubview(classIcon4)
-        view.addSubview(line)
+        rightBottomBox.addSubview(classBox4)
+        classBox4.addSubview(class4)
+        rightBottomBox.addSubview(classIcon4)
     }
     func constraints() {
-        angleIcon1.snp.makeConstraints{ make in
-            make.leading.equalTo(view.snp.leading).offset(41)
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(8)
-            make.width.equalTo(28)
+        func navigationBarConstraints() {
+            angleIcon1.snp.makeConstraints{
+                $0.leading.equalTo(view.snp.leading).offset(41)
+                $0.top.equalTo(view.safeAreaLayoutGuide).offset(8)
+                $0.width.equalTo(28)
+            }
+            employmentStatus.snp.makeConstraints {
+                $0.centerX.equalToSuperview()
+                $0.centerY.equalTo(angleIcon1.snp.centerY)
+                $0.height.equalTo(17)
+            }
+            settingIcon.snp.makeConstraints {
+                $0.centerY.equalTo(angleIcon1.snp.centerY)
+                $0.trailing.equalToSuperview().offset(-41)
+                $0.width.equalTo(28)
+                $0.height.equalTo(settingIcon.snp.width)
+            }
         }
-        employmentStatus.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.centerY.equalTo(angleIcon1.snp.centerY)
-            make.height.equalTo(19)
+        func topBoxConstraints() {
+            topBox.snp.makeConstraints {
+                $0.top.equalToSuperview().inset(110)
+                $0.leading.equalToSuperview().inset(24)
+                $0.height.equalTo(264)
+                $0.width.equalTo(345)
+            }
+            employmentStatus2.snp.makeConstraints {
+                $0.height.equalTo(17)
+                $0.top.equalTo(topBox.snp.top).offset(20)
+                $0.leading.equalTo(topBox.snp.leading).inset(16)
+            }
+            line.snp.makeConstraints {
+                $0.height.equalTo(30)
+                $0.width.equalTo(1)
+                $0.centerY.equalToSuperview()
+                $0.leading.equalTo(graph.snp.trailing).offset(16)
+            }
+            graph.snp.makeConstraints {
+                $0.top.equalToSuperview().inset(72)
+                $0.leading.equalToSuperview().inset(65)
+                $0.width.height.equalTo(120)
+            }
+            graphText.snp.makeConstraints {
+                $0.bottom.equalToSuperview().inset(16)
+                $0.height.equalTo(17)
+                $0.centerX.equalToSuperview()
+            }
+            graphText1.snp.makeConstraints {
+                $0.trailing.equalToSuperview().inset(68)
+                $0.top.equalToSuperview().inset(110)
+                $0.height.equalTo(19)
+            }
+            graphText2.snp.makeConstraints {
+                $0.centerX.equalTo(graphText1.snp.centerX)
+                $0.bottom.equalToSuperview().inset(110)
+                $0.height.equalTo(19)
+            }
+            graphText3.snp.makeConstraints {
+                $0.centerX.centerY.equalToSuperview()
+                $0.height.equalTo(19)
+            }
         }
-        settingIcon.snp.makeConstraints { make in
-            make.centerY.equalTo(angleIcon1.snp.centerY)
-            make.trailing.equalToSuperview().offset(-41)
-            make.width.equalTo(28)
-            make.height.equalTo(settingIcon.snp.width)
+        func middleLineConstraints() {
+            newLine.snp.makeConstraints {
+                $0.leading.equalToSuperview().inset(24)
+                $0.top.equalTo(topBox.snp.bottom).offset(20)
+            }
         }
+        func bottomBoxConstraints() {
+            func leftTopBoxConstraints(){
+                leftTopBox.snp.makeConstraints {
+                    $0.leading.equalToSuperview().inset(24)
+                    $0.top.equalTo(newLine.snp.bottom).offset(8)
+                    $0.height.equalTo(180)
+                    $0.width.equalTo(164)
+                }
+                classBox1.snp.makeConstraints {
+                    $0.height.equalTo(34)
+                    $0.width.equalTo(48)
+                    $0.leading.bottom.equalToSuperview().inset(16)
+                }
+                class1.snp.makeConstraints {
+                    $0.height.equalTo(18)
+                    $0.center.equalToSuperview()
+                }
+                classIcon1.snp.makeConstraints {
+                    $0.centerX.equalToSuperview()
+                    $0.top.equalToSuperview().inset(30)
+                    $0.height.width.equalTo(80)
+                }
+            }
+            func rightTopBoxConstraints() {
+                rightTopBox.snp.makeConstraints {
+                    $0.height.width.equalTo(leftTopBox)
+                    $0.trailing.equalToSuperview().inset(24)
+                    $0.centerY.equalTo(leftTopBox)
+                }
+                classBox2.snp.makeConstraints {
+                    $0.leading.bottom.equalToSuperview().inset(16)
+                    $0.height.width.equalTo(classBox1)
+                }
+                class2.snp.makeConstraints {
+                    $0.center.equalToSuperview()
+                    $0.height.equalTo(18)
+                }
+                classIcon2.snp.makeConstraints {
+                    $0.centerX.equalToSuperview()
+                    $0.top.equalToSuperview().inset(30)
+                    $0.height.width.equalTo(80)
+                }
+            }
+            func leftBottomBoxConstraints() {
+                leftBottomBox.snp.makeConstraints {
+                    $0.height.width.equalTo(leftTopBox)
+                    $0.leading.equalToSuperview().inset(24)
+                    $0.top.equalTo(leftTopBox.snp.bottom).offset(16)
+                }
+                classBox3.snp.makeConstraints {
+                    $0.leading.bottom.equalToSuperview().inset(16)
+                    $0.height.width.equalTo(classBox1)
+                }
+                class3.snp.makeConstraints {
+                    $0.height.equalTo(18)
+                    $0.center.equalToSuperview()
+                }
+                classIcon3.snp.makeConstraints {
+                    $0.centerX.equalToSuperview()
+                    $0.top.equalToSuperview().inset(30)
+                    $0.height.width.equalTo(80)
+                }
+            }
+            func rightBottomBoxConstraints() {
+                rightBottomBox.snp.makeConstraints {
+                    $0.height.width.equalTo(leftTopBox)
+                    $0.trailing.equalToSuperview().inset(24)
+                    $0.centerY.equalTo(leftBottomBox)
+                }
+                classBox4.snp.makeConstraints {
+                    $0.leading.bottom.equalToSuperview().inset(16)
+                    $0.height.width.equalTo(classBox1)
+                }
+                class4.snp.makeConstraints {
+                    $0.height.equalTo(18)
+                    $0.center.equalToSuperview()
+                }
+                classIcon4.snp.makeConstraints {
+                    $0.centerX.equalToSuperview()
+                    $0.top.equalToSuperview().inset(30)
+                    $0.height.width.equalTo(80)
+                }
+            }
+            leftTopBoxConstraints()
+            leftBottomBoxConstraints()
+            rightTopBoxConstraints()
+            rightBottomBoxConstraints()
+        }
+        navigationBarConstraints()
+        topBoxConstraints()
+        middleLineConstraints()
+        bottomBoxConstraints()
     }
 }
